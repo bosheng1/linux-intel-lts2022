@@ -143,7 +143,7 @@ int pxp_bind(void *gpu_priv, void *pxp_priv)
 	struct virtio_pxp *vpxp = (struct virtio_pxp *)pxp_priv;
 	if (!pxp || !vpxp)
 		return -1;
-	printk("pxp bind\n");
+	printk("%s\n",__FUNCTION__);
 	pxp->fe.vpxp = vpxp;
 	pxp->fe.enabled = true;
 	pxp->fe.max_sessions = vpxp->sessions;
@@ -159,7 +159,7 @@ void pxp_unbind(void *gpu_priv)
 	struct intel_pxp *pxp = (struct intel_pxp *)gpu_priv;
 	if (!pxp)
 		return;
-	printk("pxp unbind\n");
+	printk("%s\n",__FUNCTION__);
 	pxp->fe.enabled = false;
 }
 
